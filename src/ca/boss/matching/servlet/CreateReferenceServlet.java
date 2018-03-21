@@ -26,7 +26,6 @@ public class CreateReferenceServlet extends HttpServlet {
 //		daoFactory = (DaoFactory) this.getServletContext().getAttribute(DAOFACTORY_KEY);
 //	}
 	@EJB
-	
 	private ReferenceDaoImplementation refenceDaoImplementation;
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
