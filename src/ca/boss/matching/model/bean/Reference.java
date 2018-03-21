@@ -1,11 +1,24 @@
 package ca.boss.matching.model.bean;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "reference")
 public class Reference {
 
-	private Integer id=null, universeId=null, catalogId=null, profileId=null;
-	private String brand=null, model=null, title=null, url=null, image=null;
-	private String ean=null, color=null, size=null,capacity=null,memory=null, description=null, image1=null, image2=null, image3=null, image4=null;
-	private Float price=null;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id = null,
+
+			universeId = null, catalogId = null, profileId = null;
+	private String brand = null, model = null, title = null, url = null, image = null;
+	private String ean = null, color = null, size = null, capacity = null, memory = null, description = null,
+			image1 = null, image2 = null, image3 = null, image4 = null;
+	private Float price = null;
 
 	public String getColor() {
 		return color;

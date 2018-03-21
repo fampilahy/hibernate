@@ -5,11 +5,12 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.commons.lang3.StringUtils;
+//import org.apache.commons.lang3.StringUtils;
 
 import ca.boss.matching.model.bean.Reference;
 import ca.boss.matching.model.dao.DaoException;
-import ca.boss.matching.model.dao.DaoFactory;
+import ca.boss.matching.model.dao.ReferenceDaoImplementation;
+//import ca.boss.matching.model.dao.DaoFactory;
 import ca.boss.matching.model.dao.ReferenceDao;
 
 public class CreateReferenceHandler {
@@ -27,7 +28,7 @@ public class CreateReferenceHandler {
 	private static final String URL_KEY = "url";
 	private static final String IMAGE_KEY = "image";
 
-	private DaoFactory daoFactory = null;
+	private ReferenceDaoImplementation referenceDaoImplementation = null;
 
 	public Map<String, String> getErrors() {
 		return errors;
@@ -57,13 +58,12 @@ public class CreateReferenceHandler {
 	private String message = null;
 	private Reference reference = null;
 
-
-	public static CreateReferenceHandler getDefault(DaoFactory daoFactory) {
-		return new CreateReferenceHandler(daoFactory);
+	public static CreateReferenceHandler getDefault(ReferenceDaoImplementation referenceDaoImplementation) {
+		return new CreateReferenceHandler(referenceDaoImplementation);
 	}
 
-	private CreateReferenceHandler(DaoFactory daoFactory) {
-		this.daoFactory = daoFactory;
+	private CreateReferenceHandler(ReferenceDaoImplementation referenceDaoImplementation) {
+		this.referenceDaoImplementation = referenceDaoImplementation;
 	}
 
 	public void validateForm(HttpServletRequest request) {
@@ -74,73 +74,73 @@ public class CreateReferenceHandler {
 		// image1, image2, image3, image4; next dev
 
 		try {
-			brand = getValue(request,BRAND_KEY, true);
+			brand = getValue(request, BRAND_KEY, true);
 		} catch (Exception e) {
 			putError(BRAND_KEY, e.getMessage());
 		}
 
 		try {
-			model = getValue(request,MODEL_KEY, true);
+			model = getValue(request, MODEL_KEY, true);
 		} catch (Exception e) {
 			putError(MODEL_KEY, e.getMessage());
 		}
 
 		try {
-			title = getValue(request,TITLE_KEY, true);
+			title = getValue(request, TITLE_KEY, true);
 		} catch (Exception e) {
 			putError(TITLE_KEY, e.getMessage());
 		}
 
 		try {
-			ean = getValue(request,EAN_KEY, false);
+			ean = getValue(request, EAN_KEY, false);
 		} catch (Exception e) {
 			putError(EAN_KEY, e.getMessage());
 		}
 
 		try {
-			color = getValue(request,COLOR_KEY, false);
+			color = getValue(request, COLOR_KEY, false);
 		} catch (Exception e) {
 			putError(COLOR_KEY, e.getMessage());
 		}
 
 		try {
-			size = getValue(request,SIZE_KEY, false);
+			size = getValue(request, SIZE_KEY, false);
 		} catch (Exception e) {
 			putError(SIZE_KEY, e.getMessage());
 		}
 
 		try {
-			capacity = getValue(request,CAPACITY_KEY, false);
+			capacity = getValue(request, CAPACITY_KEY, false);
 		} catch (Exception e) {
 			putError(CAPACITY_KEY, e.getMessage());
 		}
 
 		try {
-			memory = getValue(request,MEMORY_KEY, false);
+			memory = getValue(request, MEMORY_KEY, false);
 		} catch (Exception e) {
 			putError(MEMORY_KEY, e.getMessage());
 		}
 
 		try {
-			description = getValue(request,DESCRIPTION_KEY, false);
+			description = getValue(request, DESCRIPTION_KEY, false);
 		} catch (Exception e) {
 			putError(DESCRIPTION_KEY, e.getMessage());
 		}
 
 		try {
-			fPrice = parseFloat(getValue(request,PRICE_KEY, false));
+			fPrice = parseFloat(getValue(request, PRICE_KEY, false));
 		} catch (Exception e) {
 			putError(PRICE_KEY, e.getMessage());
 		}
 
 		try {
-			url = getValue(request,URL_KEY, true);
+			url = getValue(request, URL_KEY, true);
 		} catch (Exception e) {
 			putError(URL_KEY, e.getMessage());
 		}
 
 		try {
-			image = getValue(request,IMAGE_KEY, true);
+			image = getValue(request, IMAGE_KEY, true);
 		} catch (Exception e) {
 			putError(IMAGE_KEY, e.getMessage());
 		}
@@ -162,13 +162,14 @@ public class CreateReferenceHandler {
 			reference.setPrice(fPrice);
 
 			ReferenceDao referenceDao;
-			
+
 			try {
-				referenceDao = daoFactory.getReferenceDao();
-				referenceDao.createReference(reference);
+//				referenceDao = referenceDaoImplementation.
+				referenceDaoImplementation.creer(reference);
+//				referenceDao.createReference(reference);
 				message = "reference created - ";
 			} catch (Exception e) {
-				putError("daoerror", ""+e.getMessage());
+				putError("daoerror", "" + e.getMessage());
 				message = "error from dao - ";
 			}
 		} else
@@ -176,7 +177,7 @@ public class CreateReferenceHandler {
 	}
 
 	private Float parseFloat(String price) throws CreateReferenceException {
-		price = price.replace(",",".");
+		price = price.replace(",", ".");
 		price = price.replaceAll("[^\\d.]", "");
 		Float fPrice = null;
 		try {
@@ -203,10 +204,10 @@ public class CreateReferenceHandler {
 				throw new CreateReferenceException("missing required field " + key);
 		}
 
-		if (StringUtils.isBlank(value)) {
-			if (required == true)
-				throw new CreateReferenceException("blank required field " + key);
-		}
+		// if (StringUtils.isBlank(value)) {
+		// if (required == true)
+		// throw new CreateReferenceException("blank required field " + key);
+		// }
 		return value;
 	}
 
