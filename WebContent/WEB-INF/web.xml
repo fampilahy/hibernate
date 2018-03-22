@@ -16,42 +16,40 @@
   
   
   
-  <listener>
-   		<listener-class>ca.boss.config.DaoFactoryInitializer</listener-class>
-   </listener>
+<!--   <listener> -->
+<!--    		<listener-class>ca.boss.config.DaoFactoryInitializer</listener-class> -->
+<!--    </listener> -->
    
-  <servlet>
-  <servlet-name>Test</servlet-name>
-  <servlet-class>Test</servlet-class>
-  </servlet>
+<!--   <servlet> -->
+<!--   <servlet-name>Test</servlet-name> -->
+<!--   <servlet-class>Test</servlet-class> -->
+<!--   </servlet> -->
   
   
-  <servlet>
-  <servlet-name>SignIn</servlet-name>
-  <servlet-class>ca.boss.authentification.servlet.SignInServlet</servlet-class>
-  </servlet>
+<!--   <servlet> -->
+<!--   <servlet-name>SignIn</servlet-name> -->
+<!--   <servlet-class>ca.boss.authentification.servlet.SignInServlet</servlet-class> -->
+<!--   </servlet> -->
   
-  <servlet>
-  <servlet-name>SignUp</servlet-name>
-  <servlet-class>ca.boss.authentification.servlet.SignUpServlet</servlet-class>
-  </servlet>
+<!--   <servlet> -->
+<!--   <servlet-name>SignUp</servlet-name> -->
+<!--   <servlet-class>ca.boss.authentification.servlet.SignUpServlet</servlet-class> -->
+<!--   </servlet> -->
   
   <servlet>
   <servlet-name>CreateReference</servlet-name>
   <servlet-class>ca.boss.matching.servlet.CreateReferenceServlet</servlet-class>
   </servlet>
   
-  <servlet>
-  <servlet-name>ListReference</servlet-name>
-  <servlet-class>ca.boss.matching.servlet.ListReferenceServlet</servlet-class>
-  </servlet>
+<!--   <servlet> -->
+<!--   <servlet-name>ListReference</servlet-name> -->
+<!--   <servlet-class>ca.boss.matching.servlet.ListReferenceServlet</servlet-class> -->
+<!--   </servlet> -->
   
-  <servlet>
-  <servlet-name>DeleteReference</servlet-name>
-  <servlet-class>ca.boss.matching.servlet.DeleteReferenceServlet</servlet-class>
-  </servlet>
-  
-  
+<!--   <servlet> -->
+<!--   <servlet-name>DeleteReference</servlet-name> -->
+<!--   <servlet-class>ca.boss.matching.servlet.DeleteReferenceServlet</servlet-class> -->
+<!--   </servlet> -->
   
   
   
@@ -66,34 +64,36 @@
   
   
   
-  <servlet-mapping>
-  <servlet-name>Test</servlet-name>
-  <url-pattern>/test</url-pattern>
-  </servlet-mapping>
   
-  <servlet-mapping>
-  <servlet-name>SignIn</servlet-name>
-  <url-pattern>/authentification/signin</url-pattern>
-  </servlet-mapping>
   
-  <servlet-mapping>
-  <servlet-name>SignUp</servlet-name>
-  <url-pattern>/authentification/signup</url-pattern>
-  </servlet-mapping>
+<!--   <servlet-mapping> -->
+<!--   <servlet-name>Test</servlet-name> -->
+<!--   <url-pattern>/test</url-pattern> -->
+<!--   </servlet-mapping> -->
+  
+<!--   <servlet-mapping> -->
+<!--   <servlet-name>SignIn</servlet-name> -->
+<!--   <url-pattern>/authentification/signin</url-pattern> -->
+<!--   </servlet-mapping> -->
+  
+<!--   <servlet-mapping> -->
+<!--   <servlet-name>SignUp</servlet-name> -->
+<!--   <url-pattern>/authentification/signup</url-pattern> -->
+<!--   </servlet-mapping> -->
   
   <servlet-mapping>
   <servlet-name>CreateReference</servlet-name>
   <url-pattern>/matching/createreference</url-pattern>
   </servlet-mapping>
   
-  <servlet-mapping>
-  <servlet-name>ListReference</servlet-name>
-  <url-pattern>/matching/listreference</url-pattern>
-  </servlet-mapping>
+<!--   <servlet-mapping> -->
+<!--   <servlet-name>ListReference</servlet-name> -->
+<!--   <url-pattern>/matching/listreference</url-pattern> -->
+<!--   </servlet-mapping> -->
   
-  <servlet-mapping>
-  <servlet-name>DeleteReference</servlet-name>
-  <url-pattern>/matching/deletereference</url-pattern>
-  </servlet-mapping>
+<!--   <servlet-mapping> -->
+<!--   <servlet-name>DeleteReference</servlet-name> -->
+<!--   <url-pattern>/matching/deletereference</url-pattern> -->
+<!--   </servlet-mapping> -->
   
 </web-app>

@@ -12,9 +12,9 @@ public class Reference {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id = null,
+	private Integer id = null;
 
-			universeId = null, catalogId = null, profileId = null;
+	Integer universeId = null, catalogId = null, profileId = null;
 	private String brand = null, model = null, title = null, url = null, image = null;
 	private String ean = null, color = null, size = null, capacity = null, memory = null, description = null,
 			image1 = null, image2 = null, image3 = null, image4 = null;
