@@ -15,7 +15,7 @@
 	<fieldset>
 		<legend>Reference details</legend>
 		
-		<form method ="post" action="/platform/matching/createreference">
+		<form method ="post" action="/hibernate/matching/createreference">
 <!-- 		<form method ="post" action="createreference"> -->
 
 			<label for="brand">Brand <span class="required">*</span></label><input type="text" name="brand" id="brand" /> ${requestScope.errors.brand }<br />
