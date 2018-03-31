@@ -153,13 +153,13 @@ public class CreateReferenceHandler {
 			reference.setTitle(title);
 			reference.setUrl(url);
 			reference.setImage(image);
-			reference.setEan(ean);
-			reference.setColor(color);
-			reference.setSize(size);
-			reference.setCapacity(capacity);
-			reference.setMemory(memory);
-			reference.setDescription(description);
-			reference.setPrice(fPrice);
+//			reference.setEan(ean);
+//			reference.setColor(color);
+//			reference.setSize(size);
+//			reference.setCapacity(capacity);
+//			reference.setMemory(memory);
+//			reference.setDescription(description);
+//			reference.setPrice(fPrice);
 
 			ReferenceDao referenceDao;
 
