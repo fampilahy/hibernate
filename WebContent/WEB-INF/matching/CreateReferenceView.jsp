@@ -15,24 +15,24 @@
 	<fieldset>
 		<legend>Reference details</legend>
 		
-		<form method ="post" action="/hibernate/matching/createreference">
+		<form method ="post" action="createreference">
 <!-- 		<form method ="post" action="createreference"> -->
 
 			<label for="brand">Brand <span class="required">*</span></label><input type="text" name="brand" id="brand" /> ${requestScope.errors.brand }<br />
 			<label for="model">Model <span class="required">*</span></label><input type="text" name="model" id="model" /> ${requestScope.errors['model'] }<br />
-			<label for="title">Title <span class="required">*</span></label><input type="text" name="title" id="title" /> ${errors.title }<br />
+			<label for="title">Title <span class="required">*</span></label><input type="text" name="title" id="title" /> ${requestScope.errors.title }<br />
 			
 			<label for="url">Url <span class="required">*</span></label><input type="text" name="url" id="url" /> ${errors.url }<br />
 			<label for="image">Image <span class="required">*</span></label><input type="text" name="image" id="image" /> ${errors.image }<br />
 			
-			<label for="ean">Ean </label><input type="text" name="ean" id="ean" /> ${errors.ean }<br />
+			<label for="ean">Ean </label><input type="text" name="ean" id="ean" /> ${requestScope.errors.ean }<br />
 			
 			<label for="color">Color </label><input type="text" name="color" id="color" /> ${errors.color }<br />
 			<label for="size">Size </label><input type="text" name="size" id="size" /><br />
-			<label for="capacity">Capacity </label><input type="text" name="capacity" id="capacity" /> ${errors.capacity }<br />
+			<label for="capacity">Capacity </label><input type="text" name="capacity" id="capacity" /> ${requestScope.errors.capacity }<br />
 			<label for="memory">Memory </label><input type="text" name="memory" id="memory" /><br />
 			<label for="description">Description </label><input type="text" name="description" id="description" /> ${errors.description }<br />
-			<label for="price">Price </label><input type="text" name="price" id="price" /> ${errors.price }<br />
+			<label for="price">Price </label><input type="text" name="price" id="price" /> ${requestScope.errors.price }<br />
 			
 			<!-- 			<label for="image1">Image1 </label><input type="text" name="image1" id="image1" /><br /> -->
 <!-- 			<label for="image2">Image2 </label><input type="text" name="image2" id="image2" /><br /> -->
@@ -67,7 +67,6 @@ var xhr = new XMLHttpRequest();
 xhr.open('GET', 'http://localhost:8080/platform/matching/listreference',true);
 xhr.setRequestHeader('Content-Type', 'text/html; charset=UTF-8');
 	xhr.send(null);
-	var overlay = document.getElementById('overlay');
 	var overlay;
 	xhr.addEventListener('readystatechange', function() {
 		if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
@@ -84,7 +83,7 @@ xhr.setRequestHeader('Content-Type', 'text/html; charset=UTF-8');
 	
 
 
-	
+	alert('here');
 </script> 
 
 </body>

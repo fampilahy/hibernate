@@ -5,13 +5,11 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-//import org.apache.commons.lang3.StringUtils;
 
 import ca.boss.matching.model.bean.Reference;
-import ca.boss.matching.model.dao.DaoException;
-import ca.boss.matching.model.dao.ReferenceDaoImplementation;
 //import ca.boss.matching.model.dao.DaoFactory;
 import ca.boss.matching.model.dao.ReferenceDao;
+import ca.boss.matching.model.dao.ReferenceDaoImplementation;
 
 public class CreateReferenceHandler {
 
@@ -153,20 +151,20 @@ public class CreateReferenceHandler {
 			reference.setTitle(title);
 			reference.setUrl(url);
 			reference.setImage(image);
-//			reference.setEan(ean);
-//			reference.setColor(color);
-//			reference.setSize(size);
-//			reference.setCapacity(capacity);
-//			reference.setMemory(memory);
-//			reference.setDescription(description);
-//			reference.setPrice(fPrice);
+			// reference.setEan(ean);
+			// reference.setColor(color);
+			// reference.setSize(size);
+			// reference.setCapacity(capacity);
+			// reference.setMemory(memory);
+			// reference.setDescription(description);
+			// reference.setPrice(fPrice);
 
 			ReferenceDao referenceDao;
 
 			try {
-//				referenceDao = referenceDaoImplementation.
+				// referenceDao = referenceDaoImplementation.
 				referenceDaoImplementation.creer(reference);
-//				referenceDao.createReference(reference);
+				// referenceDao.createReference(reference);
 				message = "reference created - ";
 			} catch (Exception e) {
 				putError("daoerror", "" + e.getMessage());
@@ -203,11 +201,12 @@ public class CreateReferenceHandler {
 			if (required == true)
 				throw new CreateReferenceException("missing required field " + key);
 		}
+		
 
-		// if (StringUtils.isBlank(value)) {
-		// if (required == true)
-		// throw new CreateReferenceException("blank required field " + key);
-		// }
+		if (value == null || value.equals("") || value.equals(" ")) {
+			if (required == true)
+				throw new CreateReferenceException("blank required field " + key);
+		}
 		return value;
 	}
 
